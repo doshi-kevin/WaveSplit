@@ -1,13 +1,9 @@
-cache
 venv
-**/*.mp3
-**/*.wav
 **/*.opus
 **/*.ipynb
 **/__pycache__
 DATA
 DATA/*
-CleanUNet
 dist
 **/*.egg-info
 dist/*
