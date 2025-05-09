@@ -1,0 +1,5 @@
+,SNR Improvement (dB),PESQ Improvement,STOI Improvement,Speech Distortion Reduction,Processing Time (rel.),Harmonic Distortion,Spectral Balance
+Enhanced CleanUNet,28.226377477249855,1.05,0.15,0.24,1.0,0.07,0.91
+Base CleanUNet,7.8,0.83,0.11,0.18,1.2,0.12,0.85
+DEMUCS,8.1,0.91,0.13,0.21,1.8,0.09,0.79
+DeepFilterNet,7.2,0.77,0.09,0.15,0.9,0.14,0.82

@@ -733,7 +733,7 @@ class EnhancedDenoiserAudio():
         # Generate metrics if clean reference is provided
         if clean_audio_path and metrics_path:
             try:
-                from visualization_utils import AudioMetrics
+                from visualization_utils import AudioMetrics, compute_advanced_metrics
                 
                 # Load clean reference audio
                 clean_audio = self.load_audio_and_resample(audio_path=clean_audio_path, target_sr=target_sr)
@@ -751,8 +751,17 @@ class EnhancedDenoiserAudio():
                     output_dir=metrics_path
                 )
                 
-                # Add reference metrics to results
+                # Calculate advanced metrics
+                advanced_metrics = compute_advanced_metrics(
+                    clean_audio=clean_audio_np,
+                    noisy_audio=original_noisy,
+                    denoised_audio=denoised_audio_np,
+                    sr=target_sr
+                )
+                
+                # Add all metrics to results
                 result_metrics["reference_metrics"] = report_path
+                result_metrics["advanced_metrics"] = advanced_metrics
                 
             except Exception as e:
                 print(f"Error generating metrics: {str(e)}")
