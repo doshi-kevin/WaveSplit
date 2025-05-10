@@ -190,7 +190,7 @@ class ModelComparison:
         for i, model_name in enumerate(all_models):
             if model_name == 'enhanced_cleanunet':
                 model_data = enhanced_metrics
-                display_name = "Enhanced CleanUNet"
+                display_name = "WaveSplit - Audio Denoiser"
             else:
                 model_data = self.baseline_metrics[model_name]
                 display_name = model_name.replace('_', ' ').title()
@@ -246,7 +246,7 @@ class ModelComparison:
         
         # Setup models
         models = ['enhanced_cleanunet'] + list(self.baseline_metrics.keys())
-        model_display_names = ['Enhanced CleanUNet', 'Base CleanUNet', 'DEMUCS', 'DeepFilterNet']
+        model_display_names = ['WaveSplit', 'Base CleanUNet', 'DEMUCS', 'DeepFilterNet']
         colors = ['#4285F4', '#34A853', '#FBBC05', '#EA4335']
         
         # Position of bars on x-axis
@@ -372,7 +372,7 @@ class ModelComparison:
         
         # Create a pandas DataFrame for the comparison
         df = pd.DataFrame({
-            'Enhanced CleanUNet': enhanced_model_metrics,
+            'WaveSplit': enhanced_model_metrics,
             'Base CleanUNet': self.baseline_metrics['base_cleanunet'],
             'DEMUCS': self.baseline_metrics['demucs'],
             'DeepFilterNet': self.baseline_metrics['deepfilternet']

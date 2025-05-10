@@ -66,7 +66,7 @@ def integrate_model_comparison(enhanced_metrics, metrics_path):
         comparison_html = """
         <div class="metrics-section">
             <h2 class="metrics-title">Model Comparison Analysis</h2>
-            <p>Comparison of Enhanced CleanUNet against baseline models:</p>
+            <p>Comparison of WaveSplit against baseline models:</p>
             
             <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px;">
                 <div>
@@ -1137,7 +1137,7 @@ def generate_metrics_html(metrics_data: Dict[str, Any], pub_metrics=None, compar
                     </svg>
                     Model Comparison
                 </h2>
-                <p>Enhanced CleanUNet compared with baseline models and alternatives:</p>
+                <p>WaveSplit compared with baseline models and alternatives:</p>
                 
                 <div class="comparison-table-container">
                     <table class="comparison-table">
@@ -1145,7 +1145,7 @@ def generate_metrics_html(metrics_data: Dict[str, Any], pub_metrics=None, compar
                             <tr>
                                 <th>Metric</th>
                                 <th>Original Signal</th>
-                                <th>Enhanced CleanUNet</th>
+                                <th>WaveSplit</th>
                                 <th>Base CleanUNet</th>
                                 <th>DEMUCS</th>
                                 <th>Relative Improvement</th>
@@ -1462,7 +1462,7 @@ def generate_metrics_html(metrics_data: Dict[str, Any], pub_metrics=None, compar
                         labels: ['SNR Improvement', 'PESQ Score', 'STOI Score', 'Processing Speed'],
                         datasets: [
                             {
-                                label: 'Enhanced CleanUNet',
+                                label: 'WaveSplit - Audio Denoiser',
                                 data: ["""
 
     # SNR improvement from the metrics
@@ -1594,8 +1594,8 @@ custom_css = f"""
 
 # App title
 title = f"""
-<h1 class="title-text">Enhanced CleanUNet Audio Denoiser</h1>
-<p style="text-align: center;">Remove noise from your audio files using NVIDIA's CleanUNet with novel enhancements</p>
+<h1 class="title-text">WaveSplit - Audio Denoiser</h1>
+<p style="text-align: center;">From noisy environments to crisp conversations, we bring clarity back to your sound.</p>
 """
 
 # Create Gradio interface
@@ -1770,65 +1770,6 @@ with gr.Blocks(
                                 elem_id="record-metrics-output",
                             )
 
-        with gr.TabItem("About"):
-            with gr.Group(elem_classes=["custom-box"]):
-                gr.Markdown("""
-                ## Enhanced Audio Denoising System
-                
-                This system enhances NVIDIA's CleanUNet model with several novel approaches:
-                
-                1. **Adaptive SNR Processing**: Dynamically adjusts denoising parameters based on the signal-to-noise ratio of each audio segment. This optimizes the trade-off between noise reduction and speech preservation.
-                
-                2. **Perceptual Enhancement**: Applies psychoacoustic principles to enhance the perceived quality of speech, focusing on frequencies most important to human hearing.
-                
-                3. **Harmonic Enhancement**: Selectively boosts harmonic components of speech, which are critical for intelligibility and naturalness.
-                
-                4. **Vocal Clarity Enhancement**: Applies targeted processing to frequency bands containing human speech, improving the clarity and presence of vocal content.
-                
-                5. **Dynamic Range Compression** (optional): Reduces the volume difference between loud and soft parts of the audio, making speech more consistently audible in varying noise environments.
-                
-                ### Publication-Ready Metrics
-                
-                This system includes comprehensive metrics and visualizations commonly used in speech enhancement publications:
-                
-                - **Signal-to-Noise Ratio (SNR)**: Measures the ratio of signal power to noise power
-                - **Spectral Centroid**: Indicates the "brightness" or clarity of the audio
-                - **Zero Crossing Rate**: Correlates with noise level and spectral content
-                - **Spectral Contrast**: Measures the speech vs. noise contrast
-                - **Dynamic Range**: Shows the range between the loudest and quietest parts
-                - **Harmonic-to-Noise Ratio**: Indicates speech quality vs. noise content
-                - **Speech Clarity Index**: Shows speech activity and articulation
-                
-                ### Visual Comparisons
-                
-                The system generates multiple visualizations to demonstrate enhancement quality:
-                
-                - Waveform comparisons before and after processing
-                - Power Spectral Density (PSD) analysis
-                - Noise Reduction Map highlighting removed noise components
-                - Speech activity and clarity visualizations
-                
-                These metrics and visualizations provide quantitative evidence of the system's performance for publication purposes.
-                """)
-            
-            # Add publication references section
-            with gr.Group(elem_classes=["custom-box"]):
-                gr.Markdown("""
-                ## References
-                
-                1. Defossez, A., Synnaeve, G., & Adi, Y. (2020). Real Time Speech Enhancement in the Waveform Domain. Interspeech 2020.
-                
-                2. Germain, F. G., Chen, Q., & Koltun, V. (2019). Speech Denoising with Deep Feature Losses. Interspeech 2019.
-                
-                3. Su, J., Adam, Z., & Hu, H. (2021). Full-band Speech Enhancement using Supervised Deep Filtering. ICASSP 2021.
-                
-                4. NVIDIA. (2020). CleanUNet: A Fully Convolutional Neural Network for Speech Enhancement.
-                
-                5. Recommendation, I. T. U. R. B. S. (2015). 1116-3: Methods for the subjective assessment of small impairments in audio systems.
-                
-                6. Recommendation, I. T. U. R. B. S. (2014). 1534-3: Method for the subjective assessment of intermediate quality level of audio systems.
-                """)
-
 
     # Connect components with processing function
     upload_button.click(
@@ -1852,8 +1793,7 @@ with gr.Blocks(
     # Footer information
     footer = """
     <div class="footer-text">
-        <p><b>Developed by:</b> Kevin Doshi</p>
-        <p><a href="">GitHub Repository</a></p>
+        <p><a href="https://github.com/doshi-kevin/WaveSplit">GitHub Repository</a></p>
     </div>
     """
     gr.HTML(footer)
