@@ -11,10 +11,13 @@ import librosa.display
 from typing import Tuple, Optional, List, Dict, Any, Union
 import json
 import time
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import the enhanced denoiser instead of the original one
 from denoiser.enhanced_denoiser import EnhancedDenoiserAudio
-from visualization_utils import AudioMetrics
+from apps.visualization_utils import AudioMetrics
 from denoiser.model_comparison import ModelComparison
 from denoiser.advanced_metrics import AdvancedAudioMetrics
 

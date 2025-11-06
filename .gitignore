@@ -1,16 +1,36 @@
-venv
+# Virtual environments
+venv/
+wavesplit_env/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Data and cache
+DATA/
+cache/
+file_output/
+Temp/
+
+# Audio files
 **/*.opus
+
+# Notebooks
 **/*.ipynb
-**/__pycache__
-DATA
-DATA/*
-dist
-**/*.egg-info
-dist/*
-VentureView/Emotion-recognition/venv/*
+
+# VentureView specific
+VentureView/Emotion-recognition/venv/
 VentureView/Emotion-recognition/haarcascade_files/haarcascade_frontalface_default.xml
 VentureView/Emotion-recognition/haarcascade_files/haarcascade_eye.xml
-VentureView/venture-view-main/node_modules/*
-VentureView/VentureViewHR/node_modules/*
-Temp/*
-venv/*
+VentureView/venture-view-main/node_modules/
+VentureView/VentureViewHR/node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
