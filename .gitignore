@@ -7,3 +7,10 @@ DATA/*
 dist
 **/*.egg-info
 dist/*
+VentureView/Emotion-recognition/venv/*
+VentureView/Emotion-recognition/haarcascade_files/haarcascade_frontalface_default.xml
+VentureView/Emotion-recognition/haarcascade_files/haarcascade_eye.xml
+VentureView/venture-view-main/node_modules/*
+VentureView/VentureViewHR/node_modules/*
+Temp/*
+venv/*
