@@ -1,0 +1,8 @@
+{
+  "name": "AI Technical Interview Platform",
+  "description": "An AI-powered platform for conducting technical interviews, starting with a comprehensive coding challenge. It features a code editor, support for multiple languages, test case validation, and a timer to simulate a real interview environment.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
